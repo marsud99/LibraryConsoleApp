@@ -8,9 +8,12 @@ namespace LibraryConsoleApp.NewApproach
 {
     internal class Rentor:User
     {
-        internal string RentorBrand { get; set; }
-        internal List<Book> RentedBooks { get; set; }    
+        internal string RentorBrand { get; set; } = string.Empty;
+        internal List<Book> RentedBooks { get; set; } = null!;
+
 
     }
+
+
 
 }

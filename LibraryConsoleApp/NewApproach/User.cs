@@ -8,16 +8,16 @@ namespace LibraryConsoleApp.NewApproach
 {
     internal class User
     {
-        internal string Name { get; set; }
+        internal string Name { get; set; } = string.Empty;
         internal int Age { get; set; }
-        internal string UserName { get; set; }
-        internal string Password { get; set; }
+        internal string UserName { get; set; } = string.Empty;
+        internal string Password { get; set; } = string.Empty;
 
 
-        public Object Login(string username, string password,MockDbContext dbContext)
+        public Object Login(string username, string password, MockDbContext dbContext)
         {
             var user = dbContext.users.Where(u => u.UserName == username).FirstOrDefault();
-            if(user is not null && user.Password == password)   
+            if (user is not null && user.Password == password)
             {
                 return user;
             }
@@ -25,7 +25,10 @@ namespace LibraryConsoleApp.NewApproach
 
             return new Exception("Username or password incorrect!");
         }
-    }
 
+
+
+
+    }
 
 }
